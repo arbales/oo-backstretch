@@ -1,0 +1,56 @@
+## OO Backstretch
+
+Backstretch is CoffeeScript class that allows you to add a dynamically-resized background image to any page.
+The image will stretch to fit the page, automatically resize as the window size changes, and **crossfade between images**.     
+
+**It depends on jQuery, but exposes a non-monadic API – the primary advantage of this being that the instance
+returned on creation is mutable. This is the primary difference from the original jQuery plugin.**
+
+oo-backstretch is a port of [srobbin/jquery-backstretch](https://github.com/srobbin/jquery-backstretch).
+
+### Examples
+
+See the examples/ folder.
+
+### Options
+`url`: The url of the image you want to backstretch. This is the only required parameter.
+
+You can also pass a hash of additional options…
+
+`centeredX`: The ratio of the width/height of the image doesn't always jive with the width/height of the window. This parameter controls whether or not we center the image on the X axis to account for the discrepancy. (type=Boolean, default=true)
+
+`centeredY`: This parameter controls whether or not we center the image on the Y axis to account for the aforementioned discrepancy. (type=Boolean, default=true)
+
+`speed`: This is the speed at which the image will fade in, after downloading is complete, in seconds. (type=Float, default=1.0)
+
+
+### Setup
+
+Include the jQuery libraries and Backstretch source in your webpage (preferably at the top of the page, in the head). Create an instance of `Backstretch` and boom. You're done.
+  
+    <script type="text/javascript" src="/path/to/prototype.s2.min.js"></script>
+    <script type="text/javascript" src="/path/to/proto.backstretch.min.js"></script>
+
+    <script type="text/javascript">   
+      bg = new Backstretch("http://path/to/image.png");
+    </script>
+
+### Swapping Images
+
+oo-backstretch expands upon the standard jQuery version by adding a method to swap images and resizes.
+
+    bg.change_source("http://path/to/another/image.png"); // Will load, and then crossfade image.
+
+### Changelog
+
+#### Version 1.0
+
+Initial release.
+
+### Support
+
+Please file a ticket on our Github issues tracker.
+
+### See Also…
+[srobbin/jquery-backstretch](https://github.com/srobbin/jquery-backstretch) The original.
+[arbales/proto-backstretch](https://github.com/srobbin/proto-backstretch) The Prototype/Scripty2 port.
